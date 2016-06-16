@@ -9,6 +9,7 @@
  * @module InputBase
  */
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Map } from 'immutable';
 import ValidationError from './ValidationError';
 import * as validators from './validators';
@@ -76,7 +77,7 @@ export default class InputBase extends React.Component {
    */
   componentDidMount() {
     this._hasMounted = true;
-    React.findDOMNode(this).addEventListener('validate', (e) => {
+    ReactDOM.findDOMNode(this).addEventListener('validate', (e) => {
       this.setState({
         error: this.validate(this.attrs(true).get('value'))
       });

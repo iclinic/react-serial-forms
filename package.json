@@ -31,7 +31,8 @@
     "immutable": "^3.7.3"
   },
   "peerDependencies": {
-    "react": ">=0.13.0"
+    "react": ">=0.14.0",
+    "react-dom": ">=0.14.0"
   },
   "devDependencies": {
     "babel": "^5.4.7",
