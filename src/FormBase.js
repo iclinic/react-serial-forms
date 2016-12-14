@@ -88,6 +88,10 @@ export default class FormBase extends React.Component {
     event.initEvent('validate', true, true);
 
     function trigger() {
+      if (!node.elements[i]) {
+        return;
+      }
+      
       node.elements[i].dispatchEvent(event);
       setTimeout(() => {
         if (valid && /error/.test(node.elements[i].getAttribute('class'))) {
