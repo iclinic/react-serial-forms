@@ -90,8 +90,10 @@ export default class FormBase extends React.Component {
     function trigger() {
       if (!node.elements[i]) {
         return;
+      } else if (!node.elements[i].getAttribute) {
+        return;
       }
-      
+
       node.elements[i].dispatchEvent(event);
       setTimeout(() => {
         if (valid && /error/.test(node.elements[i].getAttribute('class'))) {
